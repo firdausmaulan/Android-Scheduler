@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        PermissionUtil.requestPermissions(this)
+
         btnStart.setOnClickListener {
             val serviceIntent = Intent(applicationContext, MyService::class.java)
             startService(serviceIntent)
